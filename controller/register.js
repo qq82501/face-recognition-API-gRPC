@@ -25,8 +25,7 @@ const handleRegister =(req,res,pg,bcrypt)=>{
               .then(trx.commit)
               .catch(trx.rollback)
           })
-          .catch(err=>res.status(405).json(err))
-          // .catch(err => {res.status(400).json('the email is invalid, please enter other email')})
+          .catch(err => {res.status(400).json('the email is invalid, please enter other email')})
         }
 
     
