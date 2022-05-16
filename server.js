@@ -14,7 +14,9 @@ const pg = knex({
   client: 'pg',
   connection: {
     connectionString : process.env.DATABASE_URL,
-    ssl:false
+    ssl:{
+      rejectUnauthorized: false
+    }
   }
 });
 // pg.select('*').from('users').then(data=>console.log(data));
