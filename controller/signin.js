@@ -1,7 +1,7 @@
 const handleSignin =(req,res,pg,bcrypt)=>{
 const {email,password} = req.body
     if(!email || !password){
-        res.status(400).json('please field all of field')
+      return  res.status(400).json('please field all of field')
     }
 
     pg.select('hash','email').from('login')
@@ -19,7 +19,7 @@ const {email,password} = req.body
             return res.status(400).json('wrong credential')
         }
       })
-      // .catch(err=> res.status(400).json('wrong credential2') )
+      .catch(err=> res.status(400).json('wrong credential2') )
    
   }
 
