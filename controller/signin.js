@@ -19,7 +19,7 @@ const {email,password} = req.body
             return res.status(400).json('wrong credential')
         }
       })
-      .catch(err=> res.status(400).json('wrong credential2') )
+      // .catch(err=> res.status(400).json('wrong credential2') )
    
   }
 
